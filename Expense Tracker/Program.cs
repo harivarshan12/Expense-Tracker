@@ -13,7 +13,7 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("DevConnection"))
 var app = builder.Build();
 
 //Register Syncfusion license
-Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1NBaF1cXmhPYVtpR2Nbe05xdF9DYFZTTWYuP1ZhSXxXdkNjWH5edXRXT2ldUUU=");
+Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1NBaF1cWGhIfEx1RHxQdld5ZFRHallYTnNWUj0eQnxTdEFjX35ccXdXR2FbVk11Vg==");
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -33,5 +33,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Dashboard}/{action=Index}/{id?}");
+
+AppDbInitializer.Seed(app);
 
 app.Run();
